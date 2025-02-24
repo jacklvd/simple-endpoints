@@ -16,6 +16,10 @@ jobs:
       - name: Debug EC2_HOST
         run: echo "EC2_HOST=${{ secrets.EC2_HOST }}"
 
+      - name: Debug SSH Key
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" | head -n 5
+
       - name: Set up SSH Key
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > private_key.pem
